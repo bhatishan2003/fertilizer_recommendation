@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fertilizer Prediction</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5">Fertilizer Prediction</h1>
+      <form action="/predict" method="POST">
+        <div class="form-group">
+          <label for="Temperature">Temperature</label>
+          <input
+            type="number"
+            class="form-control"
+            id="Temperature"
+            name="Temperature"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Humidity">Humidity</label>
+          <input
+            type="number"
+            class="form-control"
+            id="Humidity"
+            name="Humidity"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Moisture">Moisture</label>
+          <input
+            type="number"
+            class="form-control"
+            id="Moisture"
+            name="Moisture"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Nitrogen">Nitrogen</label>
+          <input
+            type="number"
+            class="form-control"
+            id="Nitrogen"
+            name="Nitrogen"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Potassium">Potassium</label>
+          <input
+            type="number"
+            class="form-control"
+            id="Potassium"
+            name="Potassium"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Phosphorous">Phosphorous</label>
+          <input
+            type="number"
+            class="form-control"
+            id="Phosphorous"
+            name="Phosphorous"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Soil Type">Soil Type</label>
+          <select class="form-control" id="Soil Type" name="Soil Type" required>
+            <option value="Sandy">Sandy</option>
+            <option value="Loamy">Loamy</option>
+            <option value="Black">Black</option>
+            <option value="Red">Red</option>
+            <option value="Clayey">Clayey</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="Crop Type">Crop Type</label>
+          <select class="form-control" id="Crop Type" name="Crop Type" required>
+            <option value="Maize">Maize</option>
+            <option value="Sugarcane">Sugarcane</option>
+            <option value="Cotton">Cotton</option>
+            <option value="Tobacco">Tobacco</option>
+            <option value="Paddy">Paddy</option>
+            <option value="Barley">Barley</option>
+            <option value="Wheat">Wheat</option>
+            <option value="Millets">Millets</option>
+            <option value="Oil seeds">Oil seeds</option>
+            <option value="Pulses">Pulses</option>
+            <option value="Ground Nuts">Ground Nuts</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </form>
+      {% if prediction_text %}
+      <div class="mt-3 alert alert-info">{{ prediction_text }}</div>
+      {% endif %}
+    </div>
+  </body>
+</html>
